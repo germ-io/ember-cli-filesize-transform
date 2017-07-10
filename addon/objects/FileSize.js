@@ -38,6 +38,25 @@ export default Ember.Object.extend({
     return this.get('pb') + ' PB';
   }),
 
+  bytesWithUnitsRounded: Ember.computed('bytes', function () {
+    return Math.round(this.get('kb')) + ' B';
+  }),
+  kbWithUnitsRounded: Ember.computed('bytes', function () {
+    return Math.round(this.get('kb')) + ' KB';
+  }),
+  mbWithUnitsRounded: Ember.computed('bytes', function () {
+    return Math.round(this.get('mb')) + ' MB';
+  }),
+  gbWithUnitsRounded: Ember.computed('bytes', function () {
+    return Math.round(this.get('gb')) + ' GB';
+  }),
+  tbWithUnitsRounded: Ember.computed('bytes', function () {
+    return Math.round(this.get('tb')) + ' TB';
+  }),
+  pbWithUnitsRounded: Ember.computed('bytes', function () {
+    return Math.round(this.get('pb')) + ' PB';
+  }),
+
   humanReadable: Ember.computed('bytes', function () {
     var sizes = ['bytes', 'kb', 'gb', 'tb', 'pb'];
     var that = this;
@@ -52,7 +71,7 @@ export default Ember.Object.extend({
       return false;
     });
 
-    return this.get(result + 'WithUnits');
+    return this.get(result + 'WithUnitsRounded');
   })
 
 });
