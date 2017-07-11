@@ -58,7 +58,7 @@ export default Ember.Object.extend({
   }),
 
   humanReadable: Ember.computed('bytes', function () {
-    var sizes = ['bytes', 'kb', 'gb', 'tb', 'pb'];
+    var sizes = ['bytes', 'kb', 'mb', 'gb', 'tb', 'pb'];
     var that = this;
     var result;
 
